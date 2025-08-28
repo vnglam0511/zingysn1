@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Music Toggle Button</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #fff;
+    }
+    #playerBtn {
+      cursor: pointer;
+      width: 300px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Audio -->
+  <audio id="myAudio" src="https://github.com/vnglam0511/zingymp2-music/raw/refs/heads/main/C%E1%BB%A9%20Chill%20Th%C3%B4i.mp3"></audio>
+
+  <!-- Button -->
+  <img id="playerBtn" src="web-08.png" alt="Play/Pause">
+
+  <script>
+    const audio = document.getElementById("myAudio");
+    const btn = document.getElementById("playerBtn");
+
+    // Ảnh tạm: hình 1 (pause), hình 2 (play)
+    const pauseImg = "web-08.png"; // icon pause (ảnh 1)
+    const playImg = "web-07.png";  // icon play (ảnh 2)
+
+    let isPlaying = false;
+
+    btn.addEventListener("click", () => {
+      if (isPlaying) {
+        audio.pause();
+        btn.src = pauseImg;
+      } else {
+        audio.play();
+        btn.src = playImg;
+      }
+      isPlaying = !isPlaying;
+    });
+  </script>
+
+</body>
+</html>
